@@ -1,0 +1,27 @@
+{
+  "name": "esbuild-exp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./src/app.js",
+    "tailwind": "npx tailwindcss -i ./src/public/css/main.css -o ./src/public/css/main.min.css --watch",
+    "nodemon": "nodemon ./src/app.js",
+    "livereload": "browser-sync start --proxy \"localhost:9090\"  --files \"src/views/*.html\" \"src/public/js/*.js\"",
+    "dev": "concurrently \"npm run tailwind\" \"npm run nodemon\" \"npm run livereload\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "eta": "^1.12.3",
+    "express": "^4.17.1",
+    "three": "^0.135.0"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.27.7",
+    "concurrently": "^6.4.0",
+    "nodemon": "^2.0.15",
+    "tailwindcss": "^3.0.5"
+  }
+}
