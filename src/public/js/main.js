@@ -5,7 +5,9 @@ import {
   Mesh,
   PerspectiveCamera,
   WebGLRenderer,
-} from "/node_modules/three/build/three.module.js";
+  Clock,
+} from "three";
+import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 
 // Scene
 const scene = new Scene();
@@ -17,8 +19,10 @@ const mesh = new Mesh(geometry, material);
 scene.add(mesh);
 
 // Camera
-const camera = new PerspectiveCamera(75, 800 / 600);
+const sizes = { width: window.innerWidth, height: window.innerHeight };
+const camera = new PerspectiveCamera(75, sizes.width / sizes.height, 0.1, 100);
 camera.position.z = 3;
+camera.lookAt(mesh.position);
 scene.add(camera);
 
 // Renderer
@@ -27,6 +31,33 @@ const renderer = new WebGLRenderer({
   canvas,
 });
 
-renderer.setSize(800, 600);
+window.addEventListener("resize", () => {
+  sizes.width = window.innerWidth;
+  sizes.height = window.innerHeight;
 
-renderer.render(scene, camera);
+  camera.aspect = sizes.width / sizes.height;
+  camera.updateProjectionMatrix();
+
+  renderer.setSize(sizes.width, sizes.height);
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+});
+
+// Controls
+const controls = new OrbitControls(camera, canvas);
+controls.enableDamping = true;
+
+renderer.setSize(sizes.width, sizes.height);
+renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
+const clock = new Clock();
+
+function animate() {
+  const elapsedTime = clock.getElapsedTime();
+
+  controls.update();
+  renderer.render(scene, camera);
+
+  window.requestAnimationFrame(animate);
+}
+
+animate();

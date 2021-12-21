@@ -1,5 +1,13 @@
 <% layout('./layout.html') %>
 
 <canvas id="webgl"></canvas>
+<script type="importmap">
+	{
+		"imports": {
+			"three": "/node_modules/three/build/three.module.js",
+			"three/": "/node_modules/three/"
+		}
+	}
+</script>
 <script src="/public/js/main.js" type="module">
 </script>
