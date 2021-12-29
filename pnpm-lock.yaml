@@ -4,6 +4,7 @@ specifiers:
   autoprefixer: ^10.4.0
   browser-sync: ^2.27.7
   concurrently: ^6.4.0
+  dat.gui: ^0.7.7
   eta: ^1.12.3
   express: ^4.17.1
   nodemon: ^2.0.15
@@ -12,6 +13,7 @@ specifiers:
   three: ^0.135.0
 
 dependencies:
+  dat.gui: 0.7.7
   eta: 1.12.3
   express: 4.17.2
   three: 0.135.0
@@ -610,6 +612,10 @@ packages:
     engines: {node: '>=4'}
     hasBin: true
     dev: true
+
+  /dat.gui/0.7.7:
+    resolution: {integrity: sha512-sRl/28gF/XRC5ywC9I4zriATTsQcpSsRG7seXCPnTkK8/EQMIbCu5NPMpICLGxX9ZEUvcXR3ArLYCtgreFoMDw==}
+    dev: false
 
   /date-fns/2.27.0:
     resolution: {integrity: sha512-sj+J0Mo2p2X1e306MHq282WS4/A8Pz/95GIFcsPNMPMZVI3EUrAdSv90al1k+p74WGLCruMXk23bfEDZa71X9Q==}

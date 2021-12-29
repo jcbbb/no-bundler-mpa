@@ -8,24 +8,33 @@ import {
   Clock,
 } from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
+import * as dat from "dat.gui";
 
-// Scene
+const debug = new dat.GUI();
+
+/**
+ ** Scene
+ */
 const scene = new Scene();
 
-// Red cube
-const geometry = new BoxGeometry(1, 1, 1);
-const material = new MeshBasicMaterial({ color: 0xff0000 });
-const mesh = new Mesh(geometry, material);
-scene.add(mesh);
+/**
+ ** Objects
+ */
+const cube = new Mesh(new BoxGeometry(1, 1, 1), new MeshBasicMaterial({ color: 0xff0000 }));
+scene.add(cube);
 
-// Camera
+/**
+ ** Cameras
+ */
 const sizes = { width: window.innerWidth, height: window.innerHeight };
 const camera = new PerspectiveCamera(75, sizes.width / sizes.height, 0.1, 100);
 camera.position.z = 3;
-camera.lookAt(mesh.position);
+camera.lookAt(cube.position);
 scene.add(camera);
 
-// Renderer
+/**
+ ** Renderer
+ */
 const canvas = document.getElementById("webgl");
 const renderer = new WebGLRenderer({
   canvas,
@@ -42,7 +51,6 @@ window.addEventListener("resize", () => {
   renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 });
 
-// Controls
 const controls = new OrbitControls(camera, canvas);
 controls.enableDamping = true;
 
