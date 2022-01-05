@@ -29,7 +29,6 @@ scene.add(cube);
 const sizes = { width: window.innerWidth, height: window.innerHeight };
 const camera = new PerspectiveCamera(75, sizes.width / sizes.height, 0.1, 100);
 camera.position.z = 3;
-camera.lookAt(cube.position);
 scene.add(camera);
 
 /**
