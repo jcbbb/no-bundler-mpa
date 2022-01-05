@@ -5,6 +5,7 @@ specifiers:
   browser-sync: ^2.27.7
   concurrently: ^6.4.0
   dat.gui: ^0.7.7
+  dotenv: ^10.0.0
   eta: ^1.12.3
   express: ^4.17.1
   nodemon: ^2.0.15
@@ -14,6 +15,7 @@ specifiers:
 
 dependencies:
   dat.gui: 0.7.7
+  dotenv: 10.0.0
   eta: 1.12.3
   express: 4.17.2
   three: 0.135.0
@@ -720,6 +722,11 @@ packages:
     dependencies:
       is-obj: 2.0.0
     dev: true
+
+  /dotenv/10.0.0:
+    resolution: {integrity: sha512-rlBi9d8jpv9Sf1klPjNfFAuWDjKLwTIJJ/VxtoTwIR6hnZxcEOQCZg2oIL3MWBYw5GpUDKOEnND7LXTbIpQ03Q==}
+    engines: {node: '>=10'}
+    dev: false
 
   /duplexer3/0.1.4:
     resolution: {integrity: sha1-7gHdHKwO08vH/b6jfcCo8c4ALOI=}

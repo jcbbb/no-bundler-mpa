@@ -422,11 +422,3 @@ Ensure the default browser behavior of the `hidden` attribute.
 [hidden] {
   display: none;
 }
-
-.static {
-  position: static;
-}
-
-.resize {
-  resize: both;
-}

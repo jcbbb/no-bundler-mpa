@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "start": "node ./src/app.js",
     "tailwind": "pnpx tailwindcss -i ./src/public/css/main.css -o ./src/public/css/main.min.css --watch",
@@ -15,6 +16,7 @@
   "license": "ISC",
   "dependencies": {
     "dat.gui": "^0.7.7",
+    "dotenv": "^10.0.0",
     "eta": "^1.12.3",
     "express": "^4.17.1",
     "three": "^0.135.0"
