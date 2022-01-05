@@ -8,8 +8,7 @@
     "start": "node ./src/app.js",
     "tailwind": "pnpx tailwindcss -i ./src/public/css/main.css -o ./src/public/css/main.min.css --watch",
     "nodemon": "nodemon ./src/app.js",
-    "livereload": "browser-sync start --proxy \"localhost:9090\"  --files \"src/views/*.html\" \"src/public/js/*.js\"",
-    "dev": "concurrently \"pnpm tailwind\" \"pnpm nodemon\" \"pnpm livereload\""
+    "dev": "concurrently \"pnpm tailwind\" \"pnpm nodemon\""
   },
   "keywords": [],
   "author": "",
