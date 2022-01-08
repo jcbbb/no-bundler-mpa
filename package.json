@@ -5,10 +5,11 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "node ./src/app.js",
+    "start": "node ./src/index.js",
     "tailwind": "pnpx tailwindcss -i ./src/public/css/main.css -o ./src/public/css/main.min.css --watch",
-    "nodemon": "nodemon ./src/app.js",
-    "dev": "concurrently \"pnpm tailwind\" \"pnpm nodemon\""
+    "nodemon": "nodemon -e ./src/index.js",
+    "livereload": "browser-sync start --proxy \"localhost:$(grep PORT_DEV .env | cut -d '=' -f2) \"  --files \"src/views/*.html\" \"src/public/js/*.js\"",
+    "dev": "concurrently \"pnpm tailwind\" \"pnpm start\" \"pnpm livereload\""
   },
   "keywords": [],
   "author": "",

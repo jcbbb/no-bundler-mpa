@@ -10,7 +10,7 @@ import {
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 import * as dat from "dat.gui";
 
-const debug = new dat.GUI();
+const debug = new dat.GUI({ closed: true });
 
 /**
  ** Scene
